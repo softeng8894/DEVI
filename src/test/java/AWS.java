@@ -19,7 +19,7 @@ public class AWS {
         //driver.get("https://www.google.com");
         //System.out.println("Title of the page is: " + driver.getTitle());
     	
-    	   System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver.exe");
+    	   System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
     	   ChromeOptions options = new ChromeOptions();
     	   options.addArguments("--headless");
            WebDriver driver = new ChromeDriver(options);
