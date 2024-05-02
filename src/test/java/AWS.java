@@ -19,7 +19,7 @@ public class AWS {
         //driver.get("https://www.google.com");
         //System.out.println("Title of the page is: " + driver.getTitle());
     	
-    	   System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+    	   System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
            WebDriver driver = new ChromeDriver();
            driver.get("https://www.example.com");
            System.out.println("Page title is: " + driver.getTitle());
