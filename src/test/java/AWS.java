@@ -19,7 +19,7 @@ public class AWS {
         //driver.get("https://www.google.com");
         //System.out.println("Title of the page is: " + driver.getTitle());
     	
-    	   //System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
+    	   System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
     	   ChromeOptions options = new ChromeOptions();
     	   options.addArguments("--headless");
     	   options.addArguments("--no-sandbox");
