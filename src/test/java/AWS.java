@@ -24,10 +24,10 @@ public class AWS {
     	   options.addArguments("--headless");
     	   options.addArguments("--no-sandbox");
     	   options.addArguments("--disable-dev-shm-usage");
-    	   options.addArguments("start-maximized"); 
-    	   options.addArguments("disable-infobars"); 
-    	   options.addArguments("--disable-extensions"); 
-    	   options.addArguments("--disable-gpu"); 
+    	   //options.addArguments("start-maximized"); 
+    	   //options.addArguments("disable-infobars"); 
+    	   //options.addArguments("--disable-extensions"); 
+    	   //options.addArguments("--disable-gpu"); 
            WebDriver driver = new ChromeDriver(options);
            driver.get("https://www.example.com");
            System.out.println("Page title is: " + driver.getTitle());
