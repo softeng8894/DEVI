@@ -12,6 +12,8 @@ public class AWS {
         WebDriver driver;
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.setBinary("/usr/bin/google-chrome");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
