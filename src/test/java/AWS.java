@@ -13,10 +13,11 @@ public class AWS {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
-        //options.addArguments("--no-sandbox");
-        //options.addArguments("--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
         driver.get("https://www.google.com");
+        System.out.println("Chrome browser is open");
         System.out.println("Title of the page is: " + driver.getTitle());
+        driver.quit();
+        System.out.println("Chrome browser is close");
     }
 }
