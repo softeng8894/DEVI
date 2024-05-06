@@ -19,5 +19,6 @@ public class AWS {
         System.out.println("Title of the page is: " + driver.getTitle());
         driver.quit();
         System.out.println("Chrome browser is close");
+        System.out.println("King of automation and ci-cd");
     }
 }
