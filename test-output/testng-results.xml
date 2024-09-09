@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-18T19:23:27 IST" name="Default suite" finished-at="2024-04-18T19:24:01 IST" duration-ms="33883">
+  <suite started-at="2024-09-09T15:45:07 IST" name="Suite" finished-at="2024-09-09T15:45:21 IST" duration-ms="14021">
     <groups>
     </groups>
-    <test started-at="2024-04-18T19:23:27 IST" name="Default test" finished-at="2024-04-18T19:24:01 IST" duration-ms="33883">
-      <class name="APPIUMAPK">
-        <test-method signature="Valid_login()[pri:0, instance:APPIUMAPK@4fb61f4a]" started-at="2024-04-18T19:23:27 IST" name="Valid_login" finished-at="2024-04-18T19:24:01 IST" duration-ms="33827" status="PASS">
+    <test started-at="2024-09-09T15:45:07 IST" name="Test" finished-at="2024-09-09T15:45:21 IST" duration-ms="14021">
+      <class name="PF">
+        <test-method signature="OpenBrowser()[pri:0, instance:PF@515aebb0]" started-at="2024-09-09T15:45:10 IST" name="OpenBrowser" finished-at="2024-09-09T15:45:21 IST" duration-ms="10974" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Valid_login -->
-      </class> <!-- APPIUMAPK -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- OpenBrowser -->
+      </class> <!-- PF -->
+      <class name="AWS">
+        <test-method signature="OpenBrowser()[pri:0, instance:AWS@1aa7ecca]" started-at="2024-09-09T15:45:07 IST" name="OpenBrowser" finished-at="2024-09-09T15:45:10 IST" duration-ms="3006" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenBrowser -->
+      </class> <!-- AWS -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
