@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
 		<class name="AWS"/>
+		<class name="PF"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
