@@ -15,13 +15,13 @@ public class PF {
     	
     	 try (Playwright playwright = Playwright.create()) {
     	      //Browser browser = playwright.firefox().launch();
-    		 Browser browser = playwright.chromium().launch(new LaunchOptions().setHeadless(true));
+    		 Browser browser = playwright.chromium().launch(new LaunchOptions().setHeadless(false));
     	      BrowserContext context = browser.newContext(new NewContextOptions().setRecordVideoDir(Paths.get("videos/")));
     	      Page page = context.newPage();
     	      
     	          System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
     	          ChromeOptions options = new ChromeOptions();
-    	          options.addArguments("--headless");
+    	          //options.addArguments("--headless");
     	      
     	    	  page.navigate("https://www.youtube.com/");
     	    	  page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("History")).click();
