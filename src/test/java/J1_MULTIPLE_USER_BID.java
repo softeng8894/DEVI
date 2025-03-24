@@ -99,10 +99,10 @@ public class J1_MULTIPLE_USER_BID {
 	          //System.out.println("GBP to EURO = " + String.format("%.02f", convertGBP2PLN));
 	          
 	          convertGBP2PLN = convertEURO2GBP * 5.0086;
-	          System.out.println("GBP to EURO = " + convertGBP2PLN);
+	          System.out.println("GBP to PLN = " + convertGBP2PLN);
 	          BigDecimal amount1 = new BigDecimal(convertGBP2PLN);
 	          BigDecimal  final1 = amount1.setScale(2,RoundingMode.DOWN);
-	          System.out.println("GBP to EURO = " + final1);
+	          System.out.println("GBP to PLN = " + final1);
 	          
 	          Verification = page2.locator("//*[@class='date d-block ms-0 mb-0 lossingText']").innerText();
 	          System.out.println("Verification Amount = " + Verification.substring(2, Verification.length()).replace(",", ""));
@@ -178,6 +178,7 @@ public class J1_MULTIPLE_USER_BID {
  	           System.out.println("PLN to GBP = " + String.format("%.02f", convertPLN2GBP));
  	          
  	           convertGBP2EURO = (convertPLN2GBP * 1.1929);
+ 	           System.out.println("GBP to EURO = " + convertGBP2EURO);
  	           BigDecimal amount2 = new BigDecimal(convertGBP2EURO);
  	           BigDecimal  final2 = amount2.setScale(2,RoundingMode.DOWN);
 	           System.out.println("GBP to EURO = " + final2);
