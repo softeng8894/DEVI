@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-11T10:27:02 IST" name="Default suite" finished-at="2025-03-11T10:28:32 IST" duration-ms="89581">
+  <suite started-at="2025-03-24T14:58:45 IST" name="Default suite" finished-at="2025-03-24T15:00:36 IST" duration-ms="111584">
     <groups>
     </groups>
-    <test started-at="2025-03-11T10:27:02 IST" name="Default test" finished-at="2025-03-11T10:28:32 IST" duration-ms="89581">
-      <class name="J2_MULTIPLE_USER_BID">
-        <test-method signature="OpenBrowser()[pri:0, instance:J2_MULTIPLE_USER_BID@67d48005]" started-at="2025-03-11T10:27:02 IST" name="OpenBrowser" finished-at="2025-03-11T10:28:32 IST" duration-ms="89524" status="PASS">
+    <test started-at="2025-03-24T14:58:45 IST" name="Default test" finished-at="2025-03-24T15:00:36 IST" duration-ms="111584">
+      <class name="J1_MULTIPLE_USER_BID">
+        <test-method signature="OpenBrowser()[pri:0, instance:J1_MULTIPLE_USER_BID@67d48005]" started-at="2025-03-24T14:58:45 IST" name="OpenBrowser" finished-at="2025-03-24T15:00:36 IST" duration-ms="111541" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpenBrowser -->
-      </class> <!-- J2_MULTIPLE_USER_BID -->
+      </class> <!-- J1_MULTIPLE_USER_BID -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
