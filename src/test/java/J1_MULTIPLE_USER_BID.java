@@ -2,7 +2,6 @@ import com.microsoft.playwright.*;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
 import com.microsoft.playwright.Browser.NewContextOptions;
 import com.microsoft.playwright.options.AriaRole;
-import com.microsoft.playwright.options.WaitForSelectorState;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -48,7 +47,7 @@ public class J1_MULTIPLE_USER_BID {
     	          page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("View All")).nth(1).click();
     	      });
     	      Page page2 = page1.waitForPopup(() -> {
-    	          page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM28")).click();
+    	          page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM38")).click();
     	      });
               Thread.sleep(5000);
     	      page2.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Bid Now!")).click();
@@ -104,7 +103,7 @@ public class J1_MULTIPLE_USER_BID {
  	            page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("View All")).nth(1).click();
  	          });
  	          Page page2 = page1.waitForPopup(() -> {
- 	            page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM28")).click();
+ 	            page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM38")).click();
  	          });
  	          
    	          Thread.sleep(5000);
@@ -120,9 +119,20 @@ public class J1_MULTIPLE_USER_BID {
 	          BigDecimal  final1 = amount1.setScale(2,RoundingMode.DOWN);
 	          System.out.println("GBP to PLN = " + final1);
 	          
-	          Verification = page2.locator("//*[@class='date d-block ms-0 mb-0 lossingText']").innerText();
-	          System.out.println("Verification Amount = " + Verification.substring(2, Verification.length()).replace(",", ""));
-	          
+    	      Locator Notag = page2.locator("//*[@class='date d-block ms-0 mb-0 ']");
+    	      System.out.println("Tag Status= " + Notag.isVisible());
+    	      
+              if (Notag.isVisible())
+              {
+            	  Verification = page2.locator("//*[@class='date d-block ms-0 mb-0 ']").innerText();
+    	          System.out.println("Verification Amount = " + Verification.substring(2, Verification.length()).replace(",", ""));
+              }
+              else
+              {
+            	  Verification = page2.locator("//*[@class='date d-block ms-0 mb-0 lossingText']").innerText();
+    	          System.out.println("Verification Amount = " + Verification.substring(2, Verification.length()).replace(",", ""));
+              }
+	         
 	          if((Double.parseDouble( Verification.substring(2, Verification.length()).replace(",", ""))) != (Double.parseDouble(final1.toString()))) {
 	        	  Assert.fail("Bid Currency Not Match");
 	          }
@@ -151,7 +161,7 @@ public class J1_MULTIPLE_USER_BID {
  	             page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("View All")).nth(1).click();
  	           });
  	             Page page2 = page1.waitForPopup(() -> {
- 	           page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM28")).click();
+ 	           page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM38")).click();
  	           });
        	       
                Thread.sleep(5000);
@@ -186,7 +196,7 @@ public class J1_MULTIPLE_USER_BID {
    	             page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("View All")).nth(1).click();
    	           });
    	             Page page2 = page1.waitForPopup(() -> {
-   	           page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM28")).click();
+   	           page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM38")).click();
    	           });
     	       
     	       Thread.sleep(5000);

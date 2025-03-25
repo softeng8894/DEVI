@@ -39,9 +39,9 @@ public class Vendor_Auction {
     	          Thread.sleep(2000);
     	          page.getByText("Select Manifest").click();
     	          Thread.sleep(2000);
-    	          page.getByRole(AriaRole.SEARCHBOX).fill("AutomationM28");
+    	          page.getByRole(AriaRole.SEARCHBOX).fill("AutomationM38");
     	          Thread.sleep(2000);
-    	          page.getByRole(AriaRole.OPTION, new Page.GetByRoleOptions().setName("AutomationM28")).click();
+    	          page.getByRole(AriaRole.OPTION, new Page.GetByRoleOptions().setName("AutomationM38")).click();
     	          Thread.sleep(2000);
     	          page.getByPlaceholder("Reserve Price").click();
     	          Thread.sleep(2000);
