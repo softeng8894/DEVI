@@ -2,6 +2,7 @@ import com.microsoft.playwright.*;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
 import com.microsoft.playwright.Browser.NewContextOptions;
 import com.microsoft.playwright.options.AriaRole;
+import com.microsoft.playwright.options.WaitForSelectorState;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -47,10 +48,25 @@ public class J1_MULTIPLE_USER_BID {
     	          page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("View All")).nth(1).click();
     	      });
     	      Page page2 = page1.waitForPopup(() -> {
-    	          page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM26")).click();
+    	          page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM28")).click();
     	      });
               Thread.sleep(5000);
     	      page2.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Bid Now!")).click();
+    	      
+    	      Thread.sleep(2000);
+    	      Locator Confirmpopup = page2.locator("//*[@class='mb-0 btn-lg w-50 btn btn-primary' and text()='Confirm']");
+    	      System.out.println("Confirm popup = " + Confirmpopup.isVisible());
+    	      
+              if (Confirmpopup.isVisible())
+              {
+            	  page2.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Confirm")).click();
+            	  System.out.println("Button Found");
+              }
+              else
+              {
+            	  System.out.println("Button Not found");
+              }
+    	      
     	      //page2.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Confirm")).click();
     	      page2.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Yes")).click();
     	      Thread.sleep(4000);
@@ -88,17 +104,17 @@ public class J1_MULTIPLE_USER_BID {
  	            page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("View All")).nth(1).click();
  	          });
  	          Page page2 = page1.waitForPopup(() -> {
- 	            page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM26")).click();
+ 	            page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM28")).click();
  	          });
  	          
    	          Thread.sleep(5000);
-   	          convertEURO2GBP = Double.parseDouble(bidinEuro.substring(1, bidinEuro.length())) * 0.8383;
+   	          convertEURO2GBP = Double.parseDouble(bidinEuro.substring(1, bidinEuro.length())) * 0.8363;
 	          System.out.println("EURO to GBP = " + String.format("%.02f", convertEURO2GBP));
 	          
 	          //convertGBP2PLN = convertEURO2GBP * 5.0086;
 	          //System.out.println("GBP to EURO = " + String.format("%.02f", convertGBP2PLN));
 	          
-	          convertGBP2PLN = convertEURO2GBP * 5.0086;
+	          convertGBP2PLN = convertEURO2GBP * 4.993;
 	          System.out.println("GBP to PLN = " + convertGBP2PLN);
 	          BigDecimal amount1 = new BigDecimal(convertGBP2PLN);
 	          BigDecimal  final1 = amount1.setScale(2,RoundingMode.DOWN);
@@ -135,7 +151,7 @@ public class J1_MULTIPLE_USER_BID {
  	             page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("View All")).nth(1).click();
  	           });
  	             Page page2 = page1.waitForPopup(() -> {
- 	           page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM26")).click();
+ 	           page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM28")).click();
  	           });
        	       
                Thread.sleep(5000);
@@ -170,14 +186,14 @@ public class J1_MULTIPLE_USER_BID {
    	             page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("View All")).nth(1).click();
    	           });
    	             Page page2 = page1.waitForPopup(() -> {
-   	           page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM26")).click();
+   	           page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM28")).click();
    	           });
     	       
     	       Thread.sleep(5000);
-    	       convertPLN2GBP = Double.parseDouble(bidinPLN.substring(2, bidinPLN.length())) * 0.1994;
+    	       convertPLN2GBP = Double.parseDouble(bidinPLN.substring(2, bidinPLN.length())) * 0.2003;
  	           System.out.println("PLN to GBP = " + String.format("%.02f", convertPLN2GBP));
  	          
- 	           convertGBP2EURO = (convertPLN2GBP * 1.1929);
+ 	           convertGBP2EURO = (convertPLN2GBP * 1.1958);
  	           System.out.println("GBP to EURO = " + convertGBP2EURO);
  	           BigDecimal amount2 = new BigDecimal(convertGBP2EURO);
  	           BigDecimal  final2 = amount2.setScale(2,RoundingMode.DOWN);

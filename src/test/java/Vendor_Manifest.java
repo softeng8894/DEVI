@@ -38,11 +38,11 @@ public class Vendor_Manifest {
     	          Thread.sleep(1000);
     	          page.getByPlaceholder("Manifest Title").click();
     	          Thread.sleep(1000);
-    	          page.getByPlaceholder("Manifest Title").fill("AutomationM26");
+    	          page.getByPlaceholder("Manifest Title").fill("AutomationM28");
     	          Thread.sleep(1000);
     	          page.getByPlaceholder("Manifest SKU").click();
     	          Thread.sleep(1000);
-    	          page.getByPlaceholder("Manifest SKU").fill("AutomationM26");
+    	          page.getByPlaceholder("Manifest SKU").fill("AutomationM28");
     	          Thread.sleep(1000);
     	          page.getByPlaceholder("Manifest Quantity").click();
     	          Thread.sleep(1000);

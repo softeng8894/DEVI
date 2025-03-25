@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-24T15:38:54 IST" name="Default suite" finished-at="2025-03-24T15:40:41 IST" duration-ms="107446">
+  <suite started-at="2025-03-25T12:28:44 IST" name="Default suite" finished-at="2025-03-25T12:30:42 IST" duration-ms="117835">
     <groups>
     </groups>
-    <test started-at="2025-03-24T15:38:54 IST" name="Default test" finished-at="2025-03-24T15:40:41 IST" duration-ms="107446">
+    <test started-at="2025-03-25T12:28:44 IST" name="Default test" finished-at="2025-03-25T12:30:42 IST" duration-ms="117835">
       <class name="J1_MULTIPLE_USER_BID">
-        <test-method signature="OpenBrowser()[pri:0, instance:J1_MULTIPLE_USER_BID@67d48005]" started-at="2025-03-24T15:38:54 IST" name="OpenBrowser" finished-at="2025-03-24T15:40:41 IST" duration-ms="107412" status="PASS">
+        <test-method signature="OpenBrowser()[pri:0, instance:J1_MULTIPLE_USER_BID@67d48005]" started-at="2025-03-25T12:28:44 IST" name="OpenBrowser" finished-at="2025-03-25T12:30:42 IST" duration-ms="117795" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpenBrowser -->
