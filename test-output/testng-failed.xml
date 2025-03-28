@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="J1_MULTIPLE_USER_BID">
+      <class name="Vendor_Auction">
         <methods>
           <include name="OpenBrowser"/>
         </methods>
-      </class> <!-- J1_MULTIPLE_USER_BID -->
+      </class> <!-- Vendor_Auction -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

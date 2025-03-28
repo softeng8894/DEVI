@@ -7,7 +7,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.nio.file.Paths;
 
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -32,8 +31,6 @@ public class J1_MULTIPLE_USER_BID {
     	      Page page = context.newPage();
     	      
     	      System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-    	      ChromeOptions options = new ChromeOptions();
-    	      //options.addArguments("--headless");
     	          
     	      page.navigate("https://concetto-web.jobalots.com/en/login?currency=eur");
     	      page.getByPlaceholder("Email or mobile number").click();
@@ -47,7 +44,7 @@ public class J1_MULTIPLE_USER_BID {
     	          page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("View All")).nth(1).click();
     	      });
     	      Page page2 = page1.waitForPopup(() -> {
-    	          page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM38")).click();
+    	          page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM104")).click();
     	      });
               Thread.sleep(5000);
     	      page2.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Bid Now!")).click();
@@ -59,14 +56,8 @@ public class J1_MULTIPLE_USER_BID {
               if (Confirmpopup.isVisible())
               {
             	  page2.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Confirm")).click();
-            	  System.out.println("Button Found");
               }
-              else
-              {
-            	  System.out.println("Button Not found");
-              }
-    	      
-    	      //page2.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Confirm")).click();
+
     	      page2.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Yes")).click();
     	      Thread.sleep(4000);
     	      page2.locator("//*[@class='mb-0 btn btn-black']").click();
@@ -89,8 +80,7 @@ public class J1_MULTIPLE_USER_BID {
    	          Page page = context.newPage();
    	      
    	          System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-   	          ChromeOptions options = new ChromeOptions();
-   	          //options.addArguments("--headless");
+   	          
    	          page.navigate("https://concetto-web.jobalots.com/en/login?currency=eur");
    	          page.getByPlaceholder("Email or mobile number").click();
    	          page.getByPlaceholder("Email or mobile number").fill("gp@yopmail.com");
@@ -103,17 +93,17 @@ public class J1_MULTIPLE_USER_BID {
  	            page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("View All")).nth(1).click();
  	          });
  	          Page page2 = page1.waitForPopup(() -> {
- 	            page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM38")).click();
+ 	            page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM104")).click();
  	          });
  	          
    	          Thread.sleep(5000);
-   	          convertEURO2GBP = Double.parseDouble(bidinEuro.substring(1, bidinEuro.length())) * 0.8363;
+   	          convertEURO2GBP = Double.parseDouble(bidinEuro.substring(1, bidinEuro.length())) * 0.83373349;
 	          System.out.println("EURO to GBP = " + String.format("%.02f", convertEURO2GBP));
 	          
 	          //convertGBP2PLN = convertEURO2GBP * 5.0086;
 	          //System.out.println("GBP to EURO = " + String.format("%.02f", convertGBP2PLN));
 	          
-	          convertGBP2PLN = convertEURO2GBP * 4.993;
+	          convertGBP2PLN = convertEURO2GBP * 5.02278636;
 	          System.out.println("GBP to PLN = " + convertGBP2PLN);
 	          BigDecimal amount1 = new BigDecimal(convertGBP2PLN);
 	          BigDecimal  final1 = amount1.setScale(2,RoundingMode.DOWN);
@@ -146,8 +136,6 @@ public class J1_MULTIPLE_USER_BID {
        	       Page page = context.newPage();
        	      
        	       System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-       	       ChromeOptions options = new ChromeOptions();
-       	       options.addArguments("--headless");
        	          
        	       page.navigate("https://concetto-web.jobalots.com/en/login?currency=eur");
        	       page.getByPlaceholder("Email or mobile number").click();
@@ -161,7 +149,7 @@ public class J1_MULTIPLE_USER_BID {
  	             page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("View All")).nth(1).click();
  	           });
  	             Page page2 = page1.waitForPopup(() -> {
- 	           page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM38")).click();
+ 	           page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM104")).click();
  	           });
        	       
                Thread.sleep(5000);
@@ -182,8 +170,7 @@ public class J1_MULTIPLE_USER_BID {
     	       Page page = context.newPage();
     	      
     	       System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-    	       ChromeOptions options = new ChromeOptions();
-    	       //options.addArguments("--headless");
+    	       
     	       page.navigate("https://concetto-web.jobalots.com/en/login?currency=eur");
     	       page.getByPlaceholder("Email or mobile number").click();
     	       page.getByPlaceholder("Email or mobile number").fill("pd@yopmail.com");
@@ -196,14 +183,14 @@ public class J1_MULTIPLE_USER_BID {
    	             page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("View All")).nth(1).click();
    	           });
    	             Page page2 = page1.waitForPopup(() -> {
-   	           page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM38")).click();
+   	           page1.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("AutomationM104")).click();
    	           });
     	       
     	       Thread.sleep(5000);
-    	       convertPLN2GBP = Double.parseDouble(bidinPLN.substring(2, bidinPLN.length())) * 0.2003;
+    	       convertPLN2GBP = Double.parseDouble(bidinPLN.substring(2, bidinPLN.length())) * 0.1989;
  	           System.out.println("PLN to GBP = " + String.format("%.02f", convertPLN2GBP));
  	          
- 	           convertGBP2EURO = (convertPLN2GBP * 1.1958);
+ 	           convertGBP2EURO = (convertPLN2GBP * 1.19942484);
  	           System.out.println("GBP to EURO = " + convertGBP2EURO);
  	           BigDecimal amount2 = new BigDecimal(convertGBP2EURO);
  	           BigDecimal  final2 = amount2.setScale(2,RoundingMode.DOWN);

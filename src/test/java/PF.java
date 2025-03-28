@@ -4,8 +4,6 @@ import com.microsoft.playwright.Browser.NewContextOptions;
 import com.microsoft.playwright.options.AriaRole;
 import java.nio.file.Paths;
 
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 public class PF {
@@ -20,7 +18,7 @@ public class PF {
     	      Page page = context.newPage();
     	      
     	          System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-    	          ChromeOptions options = new ChromeOptions();
+    	          //ChromeOptions options = new ChromeOptions();
     	          //options.addArguments("--headless");
     	      
     	    	  page.navigate("https://www.youtube.com/");

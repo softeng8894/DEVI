@@ -4,7 +4,6 @@ import com.microsoft.playwright.Browser.NewContextOptions;
 import com.microsoft.playwright.options.AriaRole;
 import java.nio.file.Paths;
 
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 public class Vendor_Auction {
@@ -20,8 +19,7 @@ public class Vendor_Auction {
     	      Page page = context.newPage();
     	      
     	          System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-    	          
-    	          ChromeOptions options = new ChromeOptions();
+    	          //ChromeOptions options = new ChromeOptions();
     	          //options.addArguments("--headless");
     	        
     	          page.navigate("https://concetto.jobalots.com/vendor/login");
@@ -30,7 +28,7 @@ public class Vendor_Auction {
     	          page.getByPlaceholder("Password").click();
     	          page.getByPlaceholder("Password").fill("Test@123");
     	          page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Login")).click();
-    	          Thread.sleep(4000);
+    	          Thread.sleep(2000);
     	          page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(" Listings ")).click();
     	          Thread.sleep(2000);
     	          page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Auction").setExact(true)).click();
@@ -38,27 +36,21 @@ public class Vendor_Auction {
     	          page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(" Add Auction")).click();
     	          Thread.sleep(2000);
     	          page.getByText("Select Manifest").click();
-    	          Thread.sleep(2000);
-    	          page.getByRole(AriaRole.SEARCHBOX).fill("AutomationM38");
-    	          Thread.sleep(2000);
-    	          page.getByRole(AriaRole.OPTION, new Page.GetByRoleOptions().setName("AutomationM38")).click();
-    	          Thread.sleep(2000);
+    	          page.getByRole(AriaRole.SEARCHBOX).fill("AutomationM104");
+    	          page.getByRole(AriaRole.OPTION, new Page.GetByRoleOptions().setName("AutomationM104")).click();
     	          page.getByPlaceholder("Reserve Price").click();
-    	          Thread.sleep(2000);
     	          page.getByPlaceholder("Reserve Price").fill("10");
-    	          Thread.sleep(2000);
     	          page.getByPlaceholder("Start Bid Price").click();
-    	          Thread.sleep(2000);
     	          page.getByPlaceholder("Start Bid Price").fill("10");
-    	          Thread.sleep(2000);
     	          page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Select Location")).click();
-    	          Thread.sleep(2000);
     	          page.getByRole(AriaRole.SEARCHBOX).fill("ita");
-    	          Thread.sleep(2000);
     	          page.getByRole(AriaRole.OPTION, new Page.GetByRoleOptions().setName("Italy")).click();
-    	          Thread.sleep(2000);
+    	          page.getByPlaceholder("End At").click();
+    	          page.getByRole(AriaRole.CELL, new Page.GetByRoleOptions().setName("28")).nth(1).click();
+    	          page.locator(".hourselect").first().selectOption("10");
+    	          page.locator(".minuteselect").first().selectOption("45");
+    	          page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Apply")).click();
     	          page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
-    	          Thread.sleep(2000);
     	          
     	          page.close();
     	          context.close();
