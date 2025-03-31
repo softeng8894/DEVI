@@ -1,22 +1,18 @@
 import com.microsoft.playwright.*;
-import com.microsoft.playwright.BrowserType.LaunchOptions;
-import com.microsoft.playwright.Browser.NewContextOptions;
 import com.microsoft.playwright.options.AriaRole;
-import java.nio.file.Paths;
-
 import org.testng.annotations.Test;
 
 public class Vendor_Manifest {
+	
+	String optionName = "AutomationM160";
 
 	@Test
     public void OpenBrowser() throws InterruptedException  {
     	
     	 try (Playwright playwright = Playwright.create()) {
-    		  Browser browser = playwright.chromium().launch(new LaunchOptions().setHeadless(false));
-    	      BrowserContext context = browser.newContext(new NewContextOptions().setRecordVideoDir(Paths.get("Vendor_Manifest/")).setRecordVideoSize(1280,720));
-    	      Page page = context.newPage();
-    	      
-    	          System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+    		
+    		      Common_Browser cb = new Common_Browser();
+    		      Page page = cb.Great();
     	        
     	          page.navigate("https://concetto.jobalots.com/vendor/login");
     	          page.getByPlaceholder("Email").click();
@@ -29,9 +25,8 @@ public class Vendor_Manifest {
     	          page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Manifest").setExact(true)).click();
     	          page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(" Add Manifest")).click();
     	          page.getByPlaceholder("Manifest Title").click();
-    	          page.getByPlaceholder("Manifest Title").fill("AutomationM104");
-    	          page.getByPlaceholder("Manifest SKU").click();
-    	          page.getByPlaceholder("Manifest SKU").fill("AutomationM104");
+    	          page.getByPlaceholder("Manifest Title").fill(optionName);
+    	          page.getByPlaceholder("Manifest SKU").fill(optionName);
     	          page.getByPlaceholder("Manifest Quantity").click();
     	          page.getByPlaceholder("Manifest Quantity").fill("2");
     	          page.frameLocator("iframe[title=\"Editor\\, manifest_description\"]").locator("html").click();
@@ -53,8 +48,8 @@ public class Vendor_Manifest {
     	          page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Save").setExact(true)).click();
     	          
     	          page.close();
-    	          context.close();
+    	          page.context().close();
     	          playwright.close();
-    	 } 
+    	 }
     }
 }

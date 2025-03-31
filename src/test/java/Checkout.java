@@ -1,12 +1,8 @@
 import com.microsoft.playwright.*;
-import com.microsoft.playwright.BrowserType.LaunchOptions;
-import com.microsoft.playwright.Browser.NewContextOptions;
 import com.microsoft.playwright.options.AriaRole;
-import java.nio.file.Paths;
-
 import org.testng.annotations.Test;
 
-public class J2_CHECKOUT_FLOW {
+public class Checkout {
 
 	public String FinalAmount;
 	public String NetPrice;
@@ -18,11 +14,9 @@ public class J2_CHECKOUT_FLOW {
     public void OpenBrowser() throws InterruptedException  {
     	
     	 try (Playwright playwright = Playwright.create()) {
-    		  Browser browser = playwright.chromium().launch(new LaunchOptions().setHeadless(false));
-    	      BrowserContext context = browser.newContext(new NewContextOptions().setRecordVideoDir(Paths.get("J2_CHECKOUT_FLOW/")).setRecordVideoSize(1280,720));
-    	      Page page = context.newPage();
-    	      
-    	      System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+    		  
+    		  Common_Browser cb = new Common_Browser();
+		      Page page = cb.Great();
     	        
               page.navigate("https://concetto-web.jobalots.com/en/login?currency=pln");
               page.getByPlaceholder("Email or mobile number").click();
@@ -65,7 +59,7 @@ public class J2_CHECKOUT_FLOW {
                          page.frameLocator("iframe[name=\"cko-3ds2-iframe\"]").getByPlaceholder("Hint: Checkout1!").fill("Checkout1!");
                          Thread.sleep(3000);
                          page.frameLocator("iframe[name=\"cko-3ds2-iframe\"]").getByRole(AriaRole.BUTTON, new FrameLocator.GetByRoleOptions().setName("Continue")).click();
-                         Thread.sleep(10000);
+                         Thread.sleep(20000);
                          
                          page.locator("li").filter(new Locator.FilterOptions().setHasText("Welcome geetaben patelMy")).locator("path").click();
                          page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Sign Out")).click();
@@ -82,6 +76,9 @@ public class J2_CHECKOUT_FLOW {
                          {
                         	 System.out.print("Checkout flow is Not working fine");
 					 	 }
+                         page.close();
+           	             page.context().close();
+           	             playwright.close();
                 	  }
             	  }
         	  }   

@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-28T16:17:50 IST" name="Default suite" finished-at="2025-03-28T16:18:54 IST" duration-ms="63733">
+  <suite started-at="2025-03-31T16:42:30 IST" name="Default suite" finished-at="2025-03-31T16:43:43 IST" duration-ms="73487">
     <groups>
     </groups>
-    <test started-at="2025-03-28T16:17:50 IST" name="Default test" finished-at="2025-03-28T16:18:54 IST" duration-ms="63733">
-      <class name="J2_CHECKOUT_FLOW">
-        <test-method signature="OpenBrowser()[pri:0, instance:J2_CHECKOUT_FLOW@4a94ee4]" started-at="2025-03-28T16:17:50 IST" name="OpenBrowser" finished-at="2025-03-28T16:18:54 IST" duration-ms="63695" status="PASS">
+    <test started-at="2025-03-31T16:42:30 IST" name="Default test" finished-at="2025-03-31T16:43:43 IST" duration-ms="73487">
+      <class name="Checkout">
+        <test-method signature="OpenBrowser()[pri:0, instance:Checkout@4a94ee4]" started-at="2025-03-31T16:42:30 IST" name="OpenBrowser" finished-at="2025-03-31T16:43:43 IST" duration-ms="73453" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpenBrowser -->
-      </class> <!-- J2_CHECKOUT_FLOW -->
+      </class> <!-- Checkout -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
