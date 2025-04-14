@@ -42,6 +42,7 @@ public class APPIUMAPK {
 	     try 
 	     {
 			boolean t = cmok.findElement(By.xpath("//android.view.View[@content-desc=\"Himanshu Patel\"]")).isDisplayed();
+			System.out.println("Element is displayed: " + t);
 		 }
 	     catch (Exception e) 
 	     {

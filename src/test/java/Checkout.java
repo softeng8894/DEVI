@@ -59,9 +59,9 @@ public class Checkout {
                          page.frameLocator("iframe[name=\"cko-3ds2-iframe\"]").getByPlaceholder("Hint: Checkout1!").fill("Checkout1!");
                          Thread.sleep(3000);
                          page.frameLocator("iframe[name=\"cko-3ds2-iframe\"]").getByRole(AriaRole.BUTTON, new FrameLocator.GetByRoleOptions().setName("Continue")).click();
-                         Thread.sleep(20000);
+                         Thread.sleep(10000);
                          
-                         page.locator("li").filter(new Locator.FilterOptions().setHasText("Welcome geetaben patelMy")).locator("path").click();
+                         page.locator("(//*[@id='navbarDropdownMenuLink'])[1]").click();
                          page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Sign Out")).click();
                          page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Yes")).click();
                          Thread.sleep(2000);

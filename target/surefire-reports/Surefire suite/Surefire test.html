@@ -1,0 +1,636 @@
+<html>
+<head>
+<title>TestNG:  Surefire test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Surefire test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/4/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Apr 11 15:27:13 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>44 seconds (44325 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Multiple_bid.OpenBrowser4()'><b>OpenBrowser4</b><br>Test class: Multiple_bid</td>
+<td><div><pre>com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError:Target page, context or browser has been closed
+Error
+    at captureRawStack (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\stackTrace.js:49:17)
+    at LongStandingScope._race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:91:52)
+    at LongStandingScope.race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:84:17)
+    at FrameDispatcher._handleCommand (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:96:36)
+    at DispatcherConnection.dispatch (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- navigating to &quot;https://concetto-web.jobalots.com/en/login?currency=eur&quot;, waiting until &quot;load&quot;
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:932)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:932)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+	at com.microsoft.playwright.Page.navigate(Page.java:5446)
+	at Multiple_bid.OpenBrowser4(Multiple_bid.java:196)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError:Target page, context or browser has been closed
+Error
+    at captureRawStack (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\stackTrace.js:49:17)
+    at LongStandingScope._race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:91:52)
+    at LongStandingScope.race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:84:17)
+    at FrameDispatcher._handleCommand (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:96:36)
+    at DispatcherConnection.dispatch (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- navigating to &quot;https://concetto-web.jobalots.com/en/login?currency=eur&quot;, waiting until &quot;load&quot;
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace516537656", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace516537656'><pre>com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError:Target page, context or browser has been closed
+Error
+    at captureRawStack (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\stackTrace.js:49:17)
+    at LongStandingScope._race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:91:52)
+    at LongStandingScope.race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:84:17)
+    at FrameDispatcher._handleCommand (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:96:36)
+    at DispatcherConnection.dispatch (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- navigating to &quot;https://concetto-web.jobalots.com/en/login?currency=eur&quot;, waiting until &quot;load&quot;
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:932)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:932)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+	at com.microsoft.playwright.Page.navigate(Page.java:5446)
+	at Multiple_bid.OpenBrowser4(Multiple_bid.java:196)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError:Target page, context or browser has been closed
+Error
+    at captureRawStack (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\stackTrace.js:49:17)
+    at LongStandingScope._race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:91:52)
+    at LongStandingScope.race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:84:17)
+    at FrameDispatcher._handleCommand (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:96:36)
+    at DispatcherConnection.dispatch (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+- navigating to &quot;https://concetto-web.jobalots.com/en/login?currency=eur&quot;, waiting until &quot;load&quot;
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+</pre></div></td>
+<td>2</td>
+<td>Multiple_bid@15b204a1</td></tr>
+<tr>
+<td title='Multiple_bid.OpenBrowser6()'><b>OpenBrowser6</b><br>Test class: Multiple_bid</td>
+<td><div><pre>com.microsoft.playwright.PlaywrightException: Error {
+  message=&apos;net::ERR_ABORTED; maybe frame was detached?
+  name=&apos;Error
+  stack=&apos;Error: net::ERR_ABORTED; maybe frame was detached?
+    at FrameManager.frameAbortedNavigation (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:216:14)
+    at FrameManager.requestFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:276:12)
+    at CRNetworkManager._onLoadingFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crNetworkManager.js:517:134)
+    at CRSession.emit (node:events:519:28)
+    at C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crConnection.js:160:14
+}
+Call log:
+- navigating to &quot;https://concetto-web.jobalots.com/en/login?currency=eur&quot;, waiting until &quot;load&quot;
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:932)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:932)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+	at com.microsoft.playwright.Page.navigate(Page.java:5446)
+	at Multiple_bid.OpenBrowser6(Multiple_bid.java:300)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message=&apos;net::ERR_ABORTED; maybe frame was detached?
+  name=&apos;Error
+  stack=&apos;Error: net::ERR_ABORTED; maybe frame was detached?
+    at FrameManager.frameAbortedNavigation (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:216:14)
+    at FrameManager.requestFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:276:12)
+    at CRNetworkManager._onLoadingFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crNetworkManager.js:517:134)
+    at CRSession.emit (node:events:519:28)
+    at C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crConnection.js:160:14
+}
+Call log:
+- navigating to &quot;https://concetto-web.jobalots.com/en/login?currency=eur&quot;, waiting until &quot;load&quot;
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace429353573", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace429353573'><pre>com.microsoft.playwright.PlaywrightException: Error {
+  message=&apos;net::ERR_ABORTED; maybe frame was detached?
+  name=&apos;Error
+  stack=&apos;Error: net::ERR_ABORTED; maybe frame was detached?
+    at FrameManager.frameAbortedNavigation (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:216:14)
+    at FrameManager.requestFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:276:12)
+    at CRNetworkManager._onLoadingFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crNetworkManager.js:517:134)
+    at CRSession.emit (node:events:519:28)
+    at C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crConnection.js:160:14
+}
+Call log:
+- navigating to &quot;https://concetto-web.jobalots.com/en/login?currency=eur&quot;, waiting until &quot;load&quot;
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:932)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:932)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+	at com.microsoft.playwright.Page.navigate(Page.java:5446)
+	at Multiple_bid.OpenBrowser6(Multiple_bid.java:300)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message=&apos;net::ERR_ABORTED; maybe frame was detached?
+  name=&apos;Error
+  stack=&apos;Error: net::ERR_ABORTED; maybe frame was detached?
+    at FrameManager.frameAbortedNavigation (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:216:14)
+    at FrameManager.requestFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:276:12)
+    at CRNetworkManager._onLoadingFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crNetworkManager.js:517:134)
+    at CRSession.emit (node:events:519:28)
+    at C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crConnection.js:160:14
+}
+Call log:
+- navigating to &quot;https://concetto-web.jobalots.com/en/login?currency=eur&quot;, waiting until &quot;load&quot;
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+</pre></div></td>
+<td>2</td>
+<td>Multiple_bid@15b204a1</td></tr>
+<tr>
+<td title='Multiple_bid.OpenBrowser5()'><b>OpenBrowser5</b><br>Test class: Multiple_bid</td>
+<td><div><pre>com.microsoft.playwright.PlaywrightException: Error {
+  message=&apos;net::ERR_ABORTED; maybe frame was detached?
+  name=&apos;Error
+  stack=&apos;Error: net::ERR_ABORTED; maybe frame was detached?
+    at FrameManager.frameAbortedNavigation (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:216:14)
+    at FrameManager.requestFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:276:12)
+    at CRNetworkManager._onLoadingFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crNetworkManager.js:517:134)
+    at CRSession.emit (node:events:519:28)
+    at C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crConnection.js:160:14
+}
+Call log:
+- navigating to &quot;https://concetto-web.jobalots.com/en/login?currency=eur&quot;, waiting until &quot;load&quot;
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:932)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:932)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+	at com.microsoft.playwright.Page.navigate(Page.java:5446)
+	at Multiple_bid.OpenBrowser5(Multiple_bid.java:253)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message=&apos;net::ERR_ABORTED; maybe frame was detached?
+  name=&apos;Error
+  stack=&apos;Error: net::ERR_ABORTED; maybe frame was detached?
+    at FrameManager.frameAbortedNavigation (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:216:14)
+    at FrameManager.requestFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:276:12)
+    at CRNetworkManager._onLoadingFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crNetworkManager.js:517:134)
+    at CRSession.emit (node:events:519:28)
+    at C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crConnection.js:160:14
+}
+Call log:
+- navigating to &quot;https://concetto-web.jobalots.com/en/login?currency=eur&quot;, waiting until &quot;load&quot;
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace237344028", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace237344028'><pre>com.microsoft.playwright.PlaywrightException: Error {
+  message=&apos;net::ERR_ABORTED; maybe frame was detached?
+  name=&apos;Error
+  stack=&apos;Error: net::ERR_ABORTED; maybe frame was detached?
+    at FrameManager.frameAbortedNavigation (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:216:14)
+    at FrameManager.requestFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:276:12)
+    at CRNetworkManager._onLoadingFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crNetworkManager.js:517:134)
+    at CRSession.emit (node:events:519:28)
+    at C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crConnection.js:160:14
+}
+Call log:
+- navigating to &quot;https://concetto-web.jobalots.com/en/login?currency=eur&quot;, waiting until &quot;load&quot;
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:932)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:932)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+	at com.microsoft.playwright.Page.navigate(Page.java:5446)
+	at Multiple_bid.OpenBrowser5(Multiple_bid.java:253)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message=&apos;net::ERR_ABORTED; maybe frame was detached?
+  name=&apos;Error
+  stack=&apos;Error: net::ERR_ABORTED; maybe frame was detached?
+    at FrameManager.frameAbortedNavigation (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:216:14)
+    at FrameManager.requestFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:276:12)
+    at CRNetworkManager._onLoadingFailed (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crNetworkManager.js:517:134)
+    at CRSession.emit (node:events:519:28)
+    at C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\chromium\crConnection.js:160:14
+}
+Call log:
+- navigating to &quot;https://concetto-web.jobalots.com/en/login?currency=eur&quot;, waiting until &quot;load&quot;
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 41 more
+</pre></div></td>
+<td>1</td>
+<td>Multiple_bid@15b204a1</td></tr>
+<tr>
+<td title='Multiple_bid.OpenBrowser3()'><b>OpenBrowser3</b><br>Test class: Multiple_bid</td>
+<td><div><pre>com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError:Target page, context or browser has been closed
+Error
+    at captureRawStack (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\stackTrace.js:49:17)
+    at LongStandingScope._race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:91:52)
+    at LongStandingScope.race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:84:17)
+    at C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:81:43
+    at Array.map (&lt;anonymous&gt;)
+    at LongStandingScope.raceMultiple (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:81:32)
+    at Frame.retryWithProgressAndTimeouts (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:919:40)
+    at async C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:1008:29
+    at async ProgressController.run (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.click (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\frameDispatcher.js:157:12)
+    at async LongStandingScope._race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:96:14)
+    at async DispatcherConnection.dispatch (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:361:22)
+}
+Call log:
+- waiting for getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(&quot;H7953&quot;))
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at Multiple_bid.lambda$1(Multiple_bid.java:150)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:116)
+	at com.microsoft.playwright.impl.PageImpl.waitForEventWithTimeout(PageImpl.java:529)
+	at com.microsoft.playwright.impl.PageImpl.waitForPopupImpl(PageImpl.java:497)
+	at com.microsoft.playwright.impl.PageImpl.lambda$waitForPopup$4(PageImpl.java:490)
+	at com.microsoft.playwright.impl.WaitForEventLogger.lambda$get$0(WaitForEventLogger.java:50)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.WaitForEventLogger.get(WaitForEventLogger.java:41)
+	at com.microsoft.playwright.impl.ChannelOwner.withWaitLogging(ChannelOwner.java:82)
+	at com.microsoft.playwright.impl.PageImpl.waitForPopup(PageImpl.java:490)
+	at com.microsoft.playwright.Page.waitForPopup(Page.java:7795)
+	at Multiple_bid.OpenBrowser3(Multiple_bid.java:149)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError:Target page, context or browser has been closed
+Error
+    at captureRawStack (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\stackTrace.js:49:17)
+    at LongStandingScope._race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:91:52)
+    at LongStandingScope.race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:84:17)
+    at C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:81:43
+    at Array.map (&lt;anonymous&gt;)
+    at LongStandingScope.raceMultiple (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:81:32)
+    at Frame.retryWithProgressAndTimeouts (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:919:40)
+    at async C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:1008:29
+    at async ProgressController.run (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.click (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\frameDispatcher.js:157:12)
+    at async LongStandingScope._race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:96:14)
+    at async DispatcherConnection.dispatch (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:361:22)
+}
+Call log:
+- waiting for getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(&quot;H7953&quot;))
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 55 more
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2030411960", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2030411960'><pre>com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError:Target page, context or browser has been closed
+Error
+    at captureRawStack (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\stackTrace.js:49:17)
+    at LongStandingScope._race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:91:52)
+    at LongStandingScope.race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:84:17)
+    at C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:81:43
+    at Array.map (&lt;anonymous&gt;)
+    at LongStandingScope.raceMultiple (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:81:32)
+    at Frame.retryWithProgressAndTimeouts (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:919:40)
+    at async C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:1008:29
+    at async ProgressController.run (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.click (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\frameDispatcher.js:157:12)
+    at async LongStandingScope._race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:96:14)
+    at async DispatcherConnection.dispatch (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:361:22)
+}
+Call log:
+- waiting for getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(&quot;H7953&quot;))
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:160)
+	at com.microsoft.playwright.Locator.click(Locator.java:2406)
+	at Multiple_bid.lambda$1(Multiple_bid.java:150)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:116)
+	at com.microsoft.playwright.impl.PageImpl.waitForEventWithTimeout(PageImpl.java:529)
+	at com.microsoft.playwright.impl.PageImpl.waitForPopupImpl(PageImpl.java:497)
+	at com.microsoft.playwright.impl.PageImpl.lambda$waitForPopup$4(PageImpl.java:490)
+	at com.microsoft.playwright.impl.WaitForEventLogger.lambda$get$0(WaitForEventLogger.java:50)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.WaitForEventLogger.get(WaitForEventLogger.java:41)
+	at com.microsoft.playwright.impl.ChannelOwner.withWaitLogging(ChannelOwner.java:82)
+	at com.microsoft.playwright.impl.PageImpl.waitForPopup(PageImpl.java:490)
+	at com.microsoft.playwright.Page.waitForPopup(Page.java:7795)
+	at Multiple_bid.OpenBrowser3(Multiple_bid.java:149)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message=&apos;Target page, context or browser has been closed
+  name=&apos;TargetClosedError
+  stack=&apos;TargetClosedError:Target page, context or browser has been closed
+Error
+    at captureRawStack (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\stackTrace.js:49:17)
+    at LongStandingScope._race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:91:52)
+    at LongStandingScope.race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:84:17)
+    at C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:81:43
+    at Array.map (&lt;anonymous&gt;)
+    at LongStandingScope.raceMultiple (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:81:32)
+    at Frame.retryWithProgressAndTimeouts (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:919:40)
+    at async C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\frames.js:1008:29
+    at async ProgressController.run (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\progress.js:82:22)
+    at async FrameDispatcher.click (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\frameDispatcher.js:157:12)
+    at async LongStandingScope._race (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\utils\manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:96:14)
+    at async DispatcherConnection.dispatch (C:\Users\Clss-35\AppData\Local\Temp\playwright-java-12206253625801418893\package\lib\server\dispatchers\dispatcher.js:361:22)
+}
+Call log:
+- waiting for getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(&quot;H7953&quot;))
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:256)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 55 more
+</pre></div></td>
+<td>37</td>
+<td>Multiple_bid@15b204a1</td></tr>
+</table><p>
+</body>
+</html>

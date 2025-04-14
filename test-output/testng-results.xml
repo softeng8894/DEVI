@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-31T16:42:30 IST" name="Default suite" finished-at="2025-03-31T16:43:43 IST" duration-ms="73487">
+  <suite started-at="2025-04-14T18:18:55 IST" name="Default suite" finished-at="2025-04-14T18:21:01 IST" duration-ms="126441">
     <groups>
     </groups>
-    <test started-at="2025-03-31T16:42:30 IST" name="Default test" finished-at="2025-03-31T16:43:43 IST" duration-ms="73487">
-      <class name="Checkout">
-        <test-method signature="OpenBrowser()[pri:0, instance:Checkout@4a94ee4]" started-at="2025-03-31T16:42:30 IST" name="OpenBrowser" finished-at="2025-03-31T16:43:43 IST" duration-ms="73453" status="PASS">
+    <test started-at="2025-04-14T18:18:55 IST" name="Default test" finished-at="2025-04-14T18:21:01 IST" duration-ms="126441">
+      <class name="Multiple_bid">
+        <test-method signature="OpenBrowser1()[pri:1, instance:Multiple_bid@dd8ba08]" started-at="2025-04-14T18:18:55 IST" name="OpenBrowser1" finished-at="2025-04-14T18:19:15 IST" duration-ms="20478" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- OpenBrowser -->
-      </class> <!-- Checkout -->
+        </test-method> <!-- OpenBrowser1 -->
+        <test-method signature="OpenBrowser2()[pri:2, instance:Multiple_bid@dd8ba08]" started-at="2025-04-14T18:19:15 IST" name="OpenBrowser2" finished-at="2025-04-14T18:19:35 IST" duration-ms="19291" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenBrowser2 -->
+        <test-method signature="OpenBrowser3()[pri:3, instance:Multiple_bid@dd8ba08]" started-at="2025-04-14T18:19:35 IST" name="OpenBrowser3" finished-at="2025-04-14T18:20:01 IST" duration-ms="26672" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenBrowser3 -->
+        <test-method signature="OpenBrowser4()[pri:4, instance:Multiple_bid@dd8ba08]" started-at="2025-04-14T18:20:01 IST" name="OpenBrowser4" finished-at="2025-04-14T18:20:20 IST" duration-ms="18648" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenBrowser4 -->
+        <test-method signature="OpenBrowser5()[pri:5, instance:Multiple_bid@dd8ba08]" started-at="2025-04-14T18:20:20 IST" name="OpenBrowser5" finished-at="2025-04-14T18:20:44 IST" duration-ms="24349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenBrowser5 -->
+        <test-method signature="OpenBrowser6()[pri:6, instance:Multiple_bid@dd8ba08]" started-at="2025-04-14T18:20:44 IST" name="OpenBrowser6" finished-at="2025-04-14T18:21:01 IST" duration-ms="16961" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenBrowser6 -->
+      </class> <!-- Multiple_bid -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

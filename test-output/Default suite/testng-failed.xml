@@ -3,11 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Vendor_Manifest">
+      <class name="Multiple_bid">
         <methods>
-          <include name="OpenBrowser"/>
+          <include name="OpenBrowser1"/>
+          <include name="OpenBrowser2"/>
+          <include name="OpenBrowser5"/>
+          <include name="OpenBrowser3"/>
+          <include name="OpenBrowser6"/>
+          <include name="OpenBrowser4"/>
         </methods>
-      </class> <!-- Vendor_Manifest -->
+      </class> <!-- Multiple_bid -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
