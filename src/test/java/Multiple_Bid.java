@@ -26,15 +26,15 @@ public class Multiple_bid {
 	public int timeUTC;
 	public int currentUTCDay;
 	
+	Common_Browser cb = new Common_Browser();
+    Page page = cb.Great();
+    
+    Playwright playwright = null;
 
 	@Test(priority = 1)
     public void OpenBrowser1() throws InterruptedException  {
     	
 		 try(Playwright playwright = Playwright.create())  {
-    		
-		 	      Browser browser = playwright.chromium().launch(new LaunchOptions().setHeadless(false));
-		 	      BrowserContext context = browser.newContext(new NewContextOptions().setViewportSize(1900,780));
-		   	      Page page = context.newPage();
     		      
     		      System.out.println(Rnumber);
     		      
@@ -81,12 +81,18 @@ public class Multiple_bid {
 		  
     	          page.close();
     	          page.context().close();
-    	          playwright.close();
 		  }
 		  catch (Exception e) {
-	    		 System.out.println("Exception occur");
-	    		 System.exit(1);
+	    		  System.out.println("Exception occur");
+	    		  page.close();
+   	              page.context().close();
+	    		  System.exit(1);
 			}
+		 finally {
+	            if (playwright != null) {
+	                playwright.close();
+	            }
+	        }
     }
 	
 	@Test(priority = 2)
@@ -129,12 +135,18 @@ public class Multiple_bid {
     	          
     	          page.close();
     	          page.context().close();
-    	          playwright.close();
     	 }
     	 catch (Exception e) {
-    		 System.out.println("Exception occur");
-    		 System.exit(1);
+    	     	 System.out.println("Exception occur");
+    		     page.close();
+	             page.context().close();
+    		     System.exit(1);
 		}
+    	 finally {
+	            if (playwright != null) {
+	                playwright.close();
+	            }
+	        }
     }
 	
 	@Test(priority = 3)
@@ -192,12 +204,18 @@ public class Multiple_bid {
 			        
 			      page.close();
     	          page.context().close();
-    	          playwright.close();
 	      }
 	      catch (Exception e) {
-	    		 System.out.println("Exception occur");
+	    	     System.out.println("Exception occur");
+	    		 page.close();
+	             page.context().close();
 	    		 System.exit(1);
 		  }
+	      finally {
+	            if (playwright != null) {
+	                playwright.close();
+	            }
+	        }
     }
 	
 	@Test(priority = 4)
@@ -255,12 +273,18 @@ public class Multiple_bid {
 	          
 	          page.close();
 	          page.context().close();
-	          playwright.close();
 		}
 		 catch (Exception e) {
-    		 System.out.println("Exception occur");
-    		 System.exit(1);
+			  System.out.println("Exception occur");
+    		  page.close();
+	          page.context().close();
+    		  System.exit(1);
 		}
+		finally {
+            if (playwright != null) {
+                playwright.close();
+            }
+        }
 	}
 	
 	@Test(priority = 5)
@@ -304,14 +328,20 @@ public class Multiple_bid {
                }
                System.out.println("Bid in PLN = " + bidinPLN.substring(2, bidinPLN.length()));
 	           
-              page.close();
- 	          page.context().close();
- 	          playwright.close();
+               page.close();
+ 	           page.context().close();
     	 } 
 		 catch (Exception e) {
-    		 System.out.println("Exception occur");
-    		 System.exit(1);
+			   System.out.println("Exception occur");
+    		   page.close();
+	           page.context().close();
+    		   System.exit(1);
 		}
+		finally {
+            if (playwright != null) {
+                playwright.close();
+            }
+        }
 	}
 	
 	@Test(priority = 6)
@@ -355,13 +385,19 @@ public class Multiple_bid {
 	        	  Assert.fail("Bid Currency Not Match");
 	           }
 	           
-	          page.close();
- 	          page.context().close();
- 	          playwright.close();
+	           page.close();
+ 	           page.context().close();
 		} 
 		 catch (Exception e) {
-    		 System.out.println("Exception occur");
-    		 System.exit(1);
+			   System.out.println("Exception occur");
+    		   page.close();
+	           page.context().close();
+    		   System.exit(1);
 		}
+		finally {
+            if (playwright != null) {
+                playwright.close();
+            }
+        }
 	}
 }

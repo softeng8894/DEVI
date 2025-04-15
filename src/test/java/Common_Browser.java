@@ -4,6 +4,11 @@ import com.microsoft.playwright.BrowserType.LaunchOptions;
 
 public class Common_Browser {
 	
+	public Playwright playwright;
+	public Browser browser;
+	public BrowserContext context;
+	public Page page;
+	
 	    public Page Great() {	
 	        Playwright playwright = Playwright.create();
 	        Browser browser = playwright.chromium().launch(new LaunchOptions().setHeadless(false));
