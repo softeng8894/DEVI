@@ -242,13 +242,10 @@ public class Multiple_bid {
 	          });
 	          
  	          Thread.sleep(5000);
- 	          convertEURO2GBP = Double.parseDouble(bidinEuro.substring(1, bidinEuro.length())) * 0.867;
+ 	          convertEURO2GBP = Double.parseDouble(bidinEuro.substring(1, bidinEuro.length())) * 0.8623;
 	          System.out.println("EURO to GBP = " + String.format("%.02f", convertEURO2GBP));
 	          
-	          //convertGBP2PLN = convertEURO2GBP * 5.0086;
-	          //System.out.println("GBP to EURO = " + String.format("%.02f", convertGBP2PLN));
-	          
-	          convertGBP2PLN = convertEURO2GBP * 4.9483;
+	          convertGBP2PLN = convertEURO2GBP * 4.9662;
 	          System.out.println("GBP to PLN = " + convertGBP2PLN);
 	          BigDecimal amount1 = new BigDecimal(convertGBP2PLN);
 	          BigDecimal  final1 = amount1.setScale(2,RoundingMode.DOWN);
@@ -311,23 +308,44 @@ public class Multiple_bid {
 	           });
     	       
                Thread.sleep(5000);
-               page2.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Bid Now!")).click();
-	           page2.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Yes")).click();
-	           Thread.sleep(4000);
-	           
-	           Locator Notag3 = page2.locator("//*[@class='date d-block ms-0 mb-0 ']");
-  	           System.out.println("Tag Status= " + Notag3.isVisible());
+               
+               for (int i = 1; i <= 5; i++) 
+               {
+            	   page2.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Bid Now!")).click();
+            	   if(i == 1)
+            	   {
+            	     page2.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Yes")).click();
+            	   }
+            	   
+            	   Thread.sleep(2000);
+ 	    	       Locator Confirmpopup1 = page2.locator("//*[@class='mb-0 btn-lg w-50 btn btn-primary']");
+ 	    	       System.out.println("Confirm popup = " + Confirmpopup1.isVisible());
  	      
-               if (Notag3.isVisible())
-               {
-             	  bidinPLN = page2.locator("//*[@class='date d-block ms-0 mb-0 ']").innerText();
-               }
-               else
-               {
-            	  bidinPLN = page2.locator("//*[@class='date d-block ms-0 mb-0 winningText']").innerText();
-               }
-               System.out.println("Bid in PLN = " + bidinPLN.substring(2, bidinPLN.length()));
+ 	    	       if (Confirmpopup1.isVisible())
+ 		           {
+ 	    	    	  page2.locator("//*[@class='mb-0 btn-lg w-50 btn btn-primary']").click();
+ 		           }
+            	   
+ 	    	       if(i != 1)
+           	       {
+           	          page2.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Yes")).click();
+           	       }
+            	   Thread.sleep(4000);
 	           
+		           Locator Notag3 = page2.locator("//*[@class='date d-block ms-0 mb-0 ']");
+	  	           System.out.println("Tag Status= " + Notag3.isVisible());
+	 	      
+	               if (Notag3.isVisible())
+	               {
+	             	  bidinPLN = page2.locator("//*[@class='date d-block ms-0 mb-0 ']").innerText();
+	               }
+	               else
+	               {
+	            	  bidinPLN = page2.locator("//*[@class='date d-block ms-0 mb-0 winningText']").innerText();
+	               }
+	                  System.out.println("Bid in PLN = " + bidinPLN.substring(2, bidinPLN.length()));
+               }
+               
                page.close();
  	           page.context().close();
     	 } 
@@ -369,10 +387,10 @@ public class Multiple_bid {
 	           });
  	       
  	           Thread.sleep(5000);
- 	           convertPLN2GBP = Double.parseDouble(bidinPLN.substring(2, bidinPLN.length())) * 	0.2021;
+ 	           convertPLN2GBP = Double.parseDouble(bidinPLN.substring(2, bidinPLN.length())) * 	0.2014;
 	           System.out.println("PLN to GBP = " + String.format("%.02f", convertPLN2GBP));
 	          
-	           convertGBP2EURO = (convertPLN2GBP * 1.1534);
+	           convertGBP2EURO = (convertPLN2GBP * 1.1602);
 	           System.out.println("GBP to EURO = " + convertGBP2EURO);
 	           BigDecimal amount2 = new BigDecimal(convertGBP2EURO);
 	           BigDecimal  final2 = amount2.setScale(2,RoundingMode.DOWN);
