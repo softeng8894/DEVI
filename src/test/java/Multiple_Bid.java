@@ -1,14 +1,17 @@
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.microsoft.playwright.*;
-import com.microsoft.playwright.Browser.NewContextOptions;
-import com.microsoft.playwright.BrowserType.LaunchOptions;
 import com.microsoft.playwright.options.AriaRole;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
+import java.util.Base64;
 import java.util.Random;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 
 public class Multiple_bid {
 	
@@ -26,16 +29,23 @@ public class Multiple_bid {
 	public int timeUTC;
 	public int currentUTCDay;
 	
-	Common_Browser cb = new Common_Browser();
-    Page page = cb.Great();
+	static ExtentReports extent;
+    static ExtentTest test;
     
-    Playwright playwright = null;
 
 	@Test(priority = 1)
     public void OpenBrowser1() throws InterruptedException  {
-    	
+		
+		 Common_Browser cb = new Common_Browser();
+  	     Page page = cb.Great();
+ 
 		 try(Playwright playwright = Playwright.create())  {
     		      
+			      ExtentSparkReporter spark = new ExtentSparkReporter("D:/playwright-report.html");
+		          extent = new ExtentReports();
+		          extent.attachReporter(spark);
+		          test = extent.createTest("Testcase1");
+
     		      System.out.println(Rnumber);
     		      
     		      currentUTCDay = ZonedDateTime.now(ZoneOffset.UTC).getDayOfMonth();
@@ -78,31 +88,40 @@ public class Multiple_bid {
     	          page.getByPlaceholder("Weight (In KG)").fill("5000");
     	          page.getByPlaceholder("Weight (In KG)").press("Tab");
     	          page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Save").setExact(true)).click();
-		  
+    	          
+    	          test.pass("Testcase1 is Passed");
     	          page.close();
-    	          page.context().close();
+   	              page.context().close();
 		  }
 		  catch (Exception e) {
-	    		  System.out.println("Exception occur");
+			      if (page != null && !page.isClosed()) 
+			      {
+			      byte[] screenshotBytes = page.screenshot(new Page.ScreenshotOptions().setFullPage(true));
+	              String base64Screenshot = Base64.getEncoder().encodeToString(screenshotBytes);
+	              test.fail("Test failed: " + e.getMessage()).addScreenCaptureFromBase64String(base64Screenshot, "Screenshot");
+			      extent.flush();
+			      }
+	    		  System.out.println("Exception occur1");
 	    		  page.close();
    	              page.context().close();
 	    		  System.exit(1);
-			}
-		 finally {
-	            if (playwright != null) {
-	                playwright.close();
-	            }
-	        }
+		  }
+		  finally  
+		  {
+			      cb.Closeplaywright();
+	      }
+		 extent.flush();
     }
 	
 	@Test(priority = 2)
     public void OpenBrowser2() throws InterruptedException  {
-    	
+		
+		 Common_Browser cb = new Common_Browser();
+	     Page page = cb.Great();
+		
     	 try (Playwright playwright = Playwright.create()) {
     		
-    		      Browser browser = playwright.chromium().launch(new LaunchOptions().setHeadless(false));
-	 	          BrowserContext context = browser.newContext(new NewContextOptions().setViewportSize(1900,780));
-	   	          Page page = context.newPage();
+    		      test = extent.createTest("Testcase2");
     	        
     	          page.navigate("https://concetto.jobalots.com/vendor/login");
     	          page.getByPlaceholder("Email").click();
@@ -132,31 +151,40 @@ public class Multiple_bid {
     	          page.locator(".minuteselect").first().selectOption(String.valueOf(timeUTC));
     	          page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Apply")).click();
     	          page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
-    	          
+
+    	          test.pass("Testcase2 is Passed");
     	          page.close();
-    	          page.context().close();
+   	              page.context().close();
     	 }
     	 catch (Exception e) {
-    	     	 System.out.println("Exception occur");
-    		     page.close();
-	             page.context().close();
-    		     System.exit(1);
+	    		  if (page != null && !page.isClosed()) 
+			      {
+			      byte[] screenshotBytes = page.screenshot(new Page.ScreenshotOptions().setFullPage(true));
+	              String base64Screenshot = Base64.getEncoder().encodeToString(screenshotBytes);
+	              test.fail("Test failed: " + e.getMessage()).addScreenCaptureFromBase64String(base64Screenshot, "Screenshot");
+			      extent.flush();
+			      }
+   		          System.out.println("Exception occur2");
+   		          page.close();
+	              page.context().close();
+   		          System.exit(1);
 		}
     	 finally {
-	            if (playwright != null) {
-	                playwright.close();
-	            }
+    		 cb.Closeplaywright();
 	        }
+       extent.flush();
     }
 	
 	@Test(priority = 3)
     public void OpenBrowser3() throws InterruptedException  {
+		 
+		  Common_Browser cb = new Common_Browser();
+	      Page page = cb.Great();
+		
 	      try (Playwright playwright = Playwright.create()) {
+	    	  
+	    	      test = extent.createTest("Testcase3");
     		  
-		    	  Browser browser = playwright.chromium().launch(new LaunchOptions().setHeadless(false));
-		 	      BrowserContext context = browser.newContext(new NewContextOptions().setViewportSize(1900,780));
-		   	      Page page = context.newPage();
-	          
 	    	      page.navigate("https://concetto-web.jobalots.com/en/login?currency=eur");
 	    	      page.getByPlaceholder("Email or mobile number").click();
 	    	      page.getByPlaceholder("Email or mobile number").fill("pd@yopmail.com");
@@ -201,31 +229,41 @@ public class Multiple_bid {
 		      	     bidinEuro = page2.locator("//*[@class='date d-block ms-0 mb-0 winningText']").innerText();
 		          }
 			      System.out.println("Bid in Euro = " + bidinEuro.substring(1, bidinEuro.length()));
-			        
-			      page.close();
-    	          page.context().close();
+
+	 	          test.pass("Testcase3 is Passed");
+	 	          page.close();
+  	              page.context().close();
 	      }
 	      catch (Exception e) {
-	    	     System.out.println("Exception occur");
-	    		 page.close();
-	             page.context().close();
-	    		 System.exit(1);
+		    	  if (page != null && !page.isClosed()) 
+			      {
+			      byte[] screenshotBytes = page.screenshot(new Page.ScreenshotOptions().setFullPage(true));
+	              String base64Screenshot = Base64.getEncoder().encodeToString(screenshotBytes);
+	              test.fail("Test failed: " + e.getMessage()).addScreenCaptureFromBase64String(base64Screenshot, "Screenshot");
+			      extent.flush();
+			      }
+		          extent.flush();
+    		      System.out.println("Exception occur3");
+    		      page.close();
+	              page.context().close();
+    		      System.exit(1);
 		  }
 	      finally {
-	            if (playwright != null) {
-	                playwright.close();
-	            }
+	    	  cb.Closeplaywright();
 	        }
+	      extent.flush();
     }
 	
 	@Test(priority = 4)
     public void OpenBrowser4() throws InterruptedException  {
+		
+		Common_Browser cb = new Common_Browser();
+	    Page page = cb.Great();
+		
 		try (Playwright playwright = Playwright.create()) {
+			
+			  test = extent.createTest("Testcase4");
  		      
-			  Browser browser = playwright.chromium().launch(new LaunchOptions().setHeadless(false));
-	 	      BrowserContext context = browser.newContext(new NewContextOptions().setViewportSize(1900,780));
-	   	      Page page = context.newPage();
- 	          
  	          page.navigate("https://concetto-web.jobalots.com/en/login?currency=eur");
  	          page.getByPlaceholder("Email or mobile number").click();
  	          page.getByPlaceholder("Email or mobile number").fill("gp@yopmail.com");
@@ -242,10 +280,10 @@ public class Multiple_bid {
 	          });
 	          
  	          Thread.sleep(5000);
- 	          convertEURO2GBP = Double.parseDouble(bidinEuro.substring(1, bidinEuro.length())) * 0.8623;
+ 	          convertEURO2GBP = Double.parseDouble(bidinEuro.substring(1, bidinEuro.length())) * 0.8545;
 	          System.out.println("EURO to GBP = " + String.format("%.02f", convertEURO2GBP));
 	          
-	          convertGBP2PLN = convertEURO2GBP * 4.9662;
+	          convertGBP2PLN = convertEURO2GBP * 5.0217;
 	          System.out.println("GBP to PLN = " + convertGBP2PLN);
 	          BigDecimal amount1 = new BigDecimal(convertGBP2PLN);
 	          BigDecimal  final1 = amount1.setScale(2,RoundingMode.DOWN);
@@ -268,30 +306,40 @@ public class Multiple_bid {
 	        	  Assert.fail("Bid Currency Not Match");
 	          }
 	          
+	          test.pass("Testcase4 is Passed");
 	          page.close();
 	          page.context().close();
 		}
 		 catch (Exception e) {
-			  System.out.println("Exception occur");
-    		  page.close();
+			  if (page != null && !page.isClosed()) 
+		      {
+		      byte[] screenshotBytes = page.screenshot(new Page.ScreenshotOptions().setFullPage(true));
+              String base64Screenshot = Base64.getEncoder().encodeToString(screenshotBytes);
+              test.fail("Test failed: " + e.getMessage()).addScreenCaptureFromBase64String(base64Screenshot, "Screenshot");
+		      extent.flush();
+		      }
+		      extent.flush();
+   		      System.out.println("Exception occur4");
+   		      page.close();
 	          page.context().close();
-    		  System.exit(1);
+   		      System.exit(1);
 		}
 		finally {
-            if (playwright != null) {
-                playwright.close();
-            }
+			cb.Closeplaywright();
         }
+		extent.flush();
 	}
 	
 	@Test(priority = 5)
     public void OpenBrowser5() throws InterruptedException  {
+		
+		Common_Browser cb = new Common_Browser();
+	    Page page = cb.Great();
+		 
 		try (Playwright playwright = Playwright.create()) {
+			
+			   test = extent.createTest("Testcase5");
  		   
-		   	   Browser browser = playwright.chromium().launch(new LaunchOptions().setHeadless(false));
-	 	       BrowserContext context = browser.newContext(new NewContextOptions().setViewportSize(1900,780));
-	   	       Page page = context.newPage();
-    	          
     	       page.navigate("https://concetto-web.jobalots.com/en/login?currency=eur");
     	       page.getByPlaceholder("Email or mobile number").click();
     	       page.getByPlaceholder("Email or mobile number").fill("gp@yopmail.com");
@@ -346,31 +394,40 @@ public class Multiple_bid {
 	                  System.out.println("Bid in PLN = " + bidinPLN.substring(2, bidinPLN.length()));
                }
                
-               page.close();
- 	           page.context().close();
+ 	           test.pass("Testcase5 is Passed");
+ 	           page.close();
+	           page.context().close();
     	 } 
 		 catch (Exception e) {
-			   System.out.println("Exception occur");
-    		   page.close();
+			   if (page != null && !page.isClosed()) 
+		       {
+		       byte[] screenshotBytes = page.screenshot(new Page.ScreenshotOptions().setFullPage(true));
+               String base64Screenshot = Base64.getEncoder().encodeToString(screenshotBytes);
+               test.fail("Test failed: " + e.getMessage()).addScreenCaptureFromBase64String(base64Screenshot, "Screenshot");
+		       extent.flush();
+		       }
+		       extent.flush();
+   		       System.out.println("Exception occur5");
+   		       page.close();
 	           page.context().close();
-    		   System.exit(1);
+   		       System.exit(1);
 		}
 		finally {
-            if (playwright != null) {
-                playwright.close();
-            }
+			cb.Closeplaywright();
         }
+		extent.flush();
 	}
 	
 	@Test(priority = 6)
     public void OpenBrowser6() throws InterruptedException  {
-	
+		
+		Common_Browser cb = new Common_Browser();
+	    Page page = cb.Great();
+		
 		try (Playwright playwright = Playwright.create()) {
+			
+			   test = extent.createTest("Testcase6");
  		   
-		   	   Browser browser = playwright.chromium().launch(new LaunchOptions().setHeadless(false));
-	 	       BrowserContext context = browser.newContext(new NewContextOptions().setViewportSize(1900,780));
-	   	       Page page = context.newPage();
- 	       
 	 	       page.navigate("https://concetto-web.jobalots.com/en/login?currency=eur");
 	 	       page.getByPlaceholder("Email or mobile number").click();
 	 	       page.getByPlaceholder("Email or mobile number").fill("pd@yopmail.com");
@@ -387,10 +444,10 @@ public class Multiple_bid {
 	           });
  	       
  	           Thread.sleep(5000);
- 	           convertPLN2GBP = Double.parseDouble(bidinPLN.substring(2, bidinPLN.length())) * 	0.2014;
+ 	           convertPLN2GBP = Double.parseDouble(bidinPLN.substring(2, bidinPLN.length())) * 	0.1991;
 	           System.out.println("PLN to GBP = " + String.format("%.02f", convertPLN2GBP));
 	          
-	           convertGBP2EURO = (convertPLN2GBP * 1.1602);
+	           convertGBP2EURO = (convertPLN2GBP * 1.1702);
 	           System.out.println("GBP to EURO = " + convertGBP2EURO);
 	           BigDecimal amount2 = new BigDecimal(convertGBP2EURO);
 	           BigDecimal  final2 = amount2.setScale(2,RoundingMode.DOWN);
@@ -399,23 +456,31 @@ public class Multiple_bid {
 	           Verification1 = page2.locator("//*[@class='date d-block ms-0 mb-0 lossingText']").innerText();
 	           System.out.println("Verification Amount = " + Verification1.substring(1, Verification1.length()).replace(",", ""));
 	          
-	           if((Double.parseDouble( Verification1.substring(1, Verification1.length()).replace(",", ""))) != (Double.parseDouble(final2.toString()))) {
+	           if((Double.parseDouble(Verification1.substring(1, Verification1.length()).replace(",", ""))) != (Double.parseDouble(final2.toString()))) {
 	        	  Assert.fail("Bid Currency Not Match");
 	           }
 	           
-	           page.close();
- 	           page.context().close();
+ 	           test.pass("Testcase6 is Passed");
+ 	           page.close();
+	           page.context().close();
 		} 
 		 catch (Exception e) {
-			   System.out.println("Exception occur");
-    		   page.close();
+			   if (page != null && !page.isClosed()) 
+		       {
+		       byte[] screenshotBytes = page.screenshot(new Page.ScreenshotOptions().setFullPage(true));
+               String base64Screenshot = Base64.getEncoder().encodeToString(screenshotBytes);
+               test.fail("Test failed: " + e.getMessage()).addScreenCaptureFromBase64String(base64Screenshot, "Screenshot");
+		       extent.flush();
+		       }
+		       extent.flush();
+   		       System.out.println("Exception occur6");
+   		       page.close();
 	           page.context().close();
-    		   System.exit(1);
+   		       System.exit(1);
 		}
 		finally {
-            if (playwright != null) {
-                playwright.close();
-            }
+			cb.Closeplaywright();
         }
+		extent.flush();
 	}
 }
