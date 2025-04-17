@@ -12,13 +12,12 @@ import java.util.Random;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
 public class Multiple_bid {
 	
   	public static Random rand = new Random();
   	public static String Rnumber = "H" + rand.nextInt(10000);
 	
-	public String bidinEuro;
+	public String bidinEuro; 
 	public String bidinPLN;
 	public double convertEURO2GBP;
 	public double convertGBP2PLN;
